@@ -2,7 +2,8 @@ from functools import lru_cache
 
 from sentence_transformers import SentenceTransformer
 
-MODEL_NAME = "bkai-foundation-models/vietnamese-bi-encoder"
+# MODEL_NAME = "bkai-foundation-models/vietnamese-bi-encoder"
+MODEL_NAME = 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2'
 _ENCODE_BATCH = 32
 
 
