@@ -21,6 +21,32 @@
 
 Traditional travel search breaks when intent is fuzzy or multilingual. This service uses **semantic understanding** to match emotional, long-form, or mixed-language queries to the right content.
 
+The screenshots below show the **Tourism Together** client experience powered by this service's search and recommendation APIs.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+**Semantic search** — natural-language queries over destinations (vector-backed retrieval)
+
+<img src="images/sematic%20search.png" alt="Semantic search UI showing natural language destination search" width="720" />
+
+<br /><br />
+
+**Personalized recommendations** — destination suggestions from user context
+
+<img src="images/recommend%20des.png" alt="Personalized destination recommendations in the travel app" width="720" />
+
+<br /><br />
+
+**Trips & destinations** — recommended trips alongside destinations
+
+<img src="images/Recommend%20des%20and%20trip.png" alt="Recommended destinations and trips in the dashboard" width="720" />
+
+</div>
+
 ---
 
 ## 🎯 Problem → Solution
@@ -142,3 +168,7 @@ python scripts/build_embeddings.py
 | **Bui Nam Viet** | AI Engineer |
 
 ---
+
+## 📜 License
+
+See the repository root for license terms.
