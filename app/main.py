@@ -1,9 +1,14 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.model.embedding_model import get_model
 from app.api import recommend, search
 from app.config import get_settings
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    get_model() 
+    yield
 
 def create_app() -> FastAPI:
     settings = get_settings()
@@ -11,6 +16,7 @@ def create_app() -> FastAPI:
         title="Tourism AI",
         description="Semantic search and recommendations for destinations, trips, and routes.",
         version="1.0.0",
+        lifespan=lifespan,
     )
 
     if settings.cors_origins.strip() == "*":
