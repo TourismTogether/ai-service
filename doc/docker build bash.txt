@@ -1,0 +1,7 @@
+cd /d D:\code\Project\SEProject\server-ai
+docker build -t duckilot/server-ai:latest .
+docker login
+docker push duckilot/server-ai:latest
+
+# Local run (load variables from .env)
+docker run --rm -p 8000:8000 --env-file .env duckilot/server-ai:latest
