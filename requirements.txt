@@ -1,10 +1,21 @@
-# requirements.txt
+# Chỉ định nguồn tải Torch bản CPU
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.2.2+cpu
-torchvision==0.17.2+cpu
-torchaudio==2.2.2+cpu
-sentence-transformers
+
+# Khóa NumPy < 2 để tránh lỗi "failed to initialize NumPy"
+numpy<2.0.0
+
+# Nâng cấp Torch lên >= 2.4 để tương thích với các bản Transformers/Accelerate mới
+torch==2.4.1+cpu
+torchvision==0.19.1+cpu
+torchaudio==2.4.1+cpu
+
+# Các thư viện chính
+sentence-transformers>=3.0.0
 fastapi
 uvicorn
 supabase
 python-dotenv
+
+# Thư viện bổ trợ (để tránh lỗi NameError: name 'nn' is not defined)
+accelerate>=0.30.0
+transformers>=4.40.0
