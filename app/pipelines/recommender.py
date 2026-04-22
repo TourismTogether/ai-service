@@ -176,7 +176,9 @@ class RecommenderPipeline:
         exclude.extend(dest_from_trips)
         exclude = list(dict.fromkeys(exclude))
         try:
-            return self._store.search_destinations(emb, top_k, exclude_ids=exclude)
+            return self._store.search_destinations(
+                profile, emb, top_k, exclude_ids=exclude
+            )
         except Exception:
             return []
 
@@ -190,7 +192,7 @@ class RecommenderPipeline:
         emb = encode_query(profile)
         exclude = list(dict.fromkeys(joined_trip_ids))
         try:
-            return self._store.search_trips(emb, top_k, exclude_ids=exclude)
+            return self._store.search_trips(profile, emb, top_k, exclude_ids=exclude)
         except Exception:
             return []
 
@@ -204,6 +206,6 @@ class RecommenderPipeline:
         emb = encode_query(profile)
         exclude = list(dict.fromkeys(route_ids))
         try:
-            return self._store.search_routes(emb, top_k, exclude_ids=exclude)
+            return self._store.search_routes(profile, emb, top_k, exclude_ids=exclude)
         except Exception:
             return []

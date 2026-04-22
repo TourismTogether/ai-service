@@ -140,7 +140,7 @@ def main() -> None:
     print("Warming up model + RPC...")
     _ = encode_query("warmup query")
     q0 = encode_query("warmup query")
-    store.search_destinations(q0, top_k=args.top_k)
+    store.search_destinations("warmup query", q0, top_k=args.top_k)
     _topk_cosine_cpu(matrix, np.asarray(q0, dtype=np.float32), args.top_k)
 
     encode_ms: list[float] = []
@@ -156,7 +156,7 @@ def main() -> None:
         t1 = time.perf_counter()
         q = encode_query(text)
         t2 = time.perf_counter()
-        _ = store.search_destinations(q, top_k=args.top_k)
+        _ = store.search_destinations(text, q, top_k=args.top_k)
         t3 = time.perf_counter()
 
         qv = np.asarray(q, dtype=np.float32)

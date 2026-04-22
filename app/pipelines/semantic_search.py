@@ -7,10 +7,13 @@ class SemanticSearchPipeline:
         self.store = store
 
     def search_destinations(self, query: str, top_k: int = 5):
-        return self.store.search_destinations(encode_query(query), top_k)
+        q = query.strip()
+        return self.store.search_destinations(q, encode_query(q), top_k)
 
     def search_trips(self, query: str, top_k: int = 5):
-        return self.store.search_trips(encode_query(query), top_k)
+        q = query.strip()
+        return self.store.search_trips(q, encode_query(q), top_k)
 
     def search_routes(self, query: str, top_k: int = 5):
-        return self.store.search_routes(encode_query(query), top_k)
+        q = query.strip()
+        return self.store.search_routes(q, encode_query(q), top_k)
