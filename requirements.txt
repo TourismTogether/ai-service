@@ -14,6 +14,7 @@ sentence-transformers>=3.0.0
 fastapi
 uvicorn
 supabase
+httpx
 python-dotenv
 
 # Thư viện bổ trợ (để tránh lỗi NameError: name 'nn' is not defined)
